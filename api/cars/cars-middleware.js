@@ -19,18 +19,18 @@ const checkCarPayload = (req, res, next) => {
 
   if (!vin || !make || !model || !mileage) {
     if (!vin) {
-      msg += "vin ";
+      msg += "vin";
     }
     if (!make) {
-      msg += "make ";
+      msg += "make";
     }
-    if (model) {
-      msg += "model ";
+    if (!model) {
+      msg += "model";
     }
     if (!mileage) {
       msg += "mileage";
     }
-    msg += "is missing";
+    msg += " is missing";
     return res.status(400).json({
       message: msg
     })

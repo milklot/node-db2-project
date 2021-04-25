@@ -12,5 +12,5 @@ exports.up = async (knex) => {
 }
 
 exports.down = async (knex) => {
-	await knex.schema.dropDownIfExists("cars")
+	await knex.schema.dropTableIfExists("cars")
 }

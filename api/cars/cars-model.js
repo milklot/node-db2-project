@@ -7,12 +7,12 @@ const getAll = () => {
 
 const getById = (id) => {
   // DO YOUR MAGIC
-  return db('cars').where({id}).first();
+  return db('cars').where("id", id).first();
 }
 
-const create = (newCar) => {
+const create = async (newCar) => {
   // DO YOUR MAGIC
-  const [id] =  db('cars').insert(newCar)
+  const [id] =  await db('cars').insert(newCar)
     return getById(id)
 }
 
